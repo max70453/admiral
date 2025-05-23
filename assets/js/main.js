@@ -193,12 +193,219 @@
     `;
     
     document.head.appendChild(style);
+
+  // Добавляем модальные окна для услуг
+  function createServiceModals() {
+    const services = [
+       {
+         title: 'Оптовые поставки',
+         description: 'Осуществляем оптовые поставки продуктов питания для магазинов, ресторанов, кафе и других предприятий общественного питания на выгодных условиях.',
+         details: 'Преимущества оптовых поставок:',
+         benefits: [
+           'Выгодные цены за счет прямых контрактов с производителями',
+           'Широкий ассортимент продукции (более 1000 наименований)',
+           'Индивидуальные условия сотрудничества',
+           'Гибкая система скидок для постоянных клиентов',
+           'Контроль качества на всех этапах поставки'
+         ],
+         process: [
+           'Заключение договора поставки',
+           'Формирование заказа',
+           'Оплата и доставка',
+           'Контроль качества и приемка товара'
+         ]
+       },
+       {
+         title: 'Доставка',
+         description: 'Быстрая и надежная доставка продукции по ДНР и области. Специальные условия доставки в регионы России.',
+         details: 'Наши преимущества доставки:',
+         benefits: [
+           'Оперативность (доставка в течение 24 часов)',
+           'Надежность (страхование грузов)',
+           'Возможность отслеживания заказа онлайн',
+           'Специальные условия для регионов России',
+           'Круглосуточная поддержка клиентов'
+         ],
+         process: [
+           'Оформление заявки на доставку',
+           'Подтверждение заказа',
+           'Подготовка и упаковка товара',
+           'Доставка и контроль качества'
+         ]
+       },
+       {
+         title: 'Индивидуальные заказы',
+         description: 'Изготовление продукции по индивидуальным заказам с учетом всех пожеланий клиента. Разработка уникальных рецептур.',
+         details: 'Преимущества индивидуальных заказов:',
+         benefits: [
+           'Полное соответствие вашим требованиям',
+           'Уникальные рецептуры и дизайн упаковки',
+           'Контроль качества на всех этапах производства',
+           'Соблюдение сроков изготовления',
+           'Консультации от наших экспертов'
+         ],
+         process: [
+           'Обсуждение концепции заказа',
+           'Разработка рецептуры и дизайна',
+           'Согласование и утверждение образцов',
+           'Производство и контроль качества',
+           'Доставка готовой продукции'
+         ]
+       },
+       {
+         title: 'Контроль качества',
+         description: 'Предоставляем полный пакет документов, подтверждающих качество и безопасность нашей продукции. Строгий контроль на всех этапах производства.',
+         details: 'Наш контроль качества:',
+         benefits: [
+           'Сертификация продукции по международным стандартам',
+           'Лабораторные исследования на всех этапах производства',
+           'Строгие стандарты качества',
+           'Регулярные проверки и аудиты',
+           'Полная прозрачность и отчетность'
+         ],
+         process: [
+           'Отбор образцов для анализа',
+           'Лабораторные исследования',
+           'Контроль на производственной линии',
+           'Финальная проверка перед отгрузкой',
+           'Сертификация и документация'
+         ]
+       },
+       {
+         title: 'Организация мероприятий',
+         description: 'Обеспечение продуктами питания корпоративных мероприятий, праздников и других событий. Индивидуальный подход к каждому клиенту.',
+         details: 'Преимущества организации мероприятий:',
+         benefits: [
+           'Полное сопровождение мероприятия',
+           'Индивидуальное меню и кейтеринг',
+           'Профессиональное обслуживание',
+           'Гибкие условия сотрудничества',
+           'Консультации по выбору меню'
+         ],
+         process: [
+           'Обсуждение концепции мероприятия',
+           'Разработка меню и плана обслуживания',
+           'Согласование всех деталей',
+           'Подготовка и доставка продукции',
+           'Обслуживание и поддержка'
+         ]
+       },
+       {
+         title: 'Консультации',
+         description: 'Профессиональные консультации по выбору продукции, условиям хранения и транспортировки. Помощь в составлении оптимального ассортимента.',
+         details: 'Наши консультации:',
+         benefits: [
+           'Профессиональный подход к каждому клиенту',
+           'Индивидуальные рекомендации',
+           'Помощь в выборе продукции',
+           'Консультации по условиям хранения и транспортировки',
+           'Составление оптимального ассортимента'
+         ],
+         process: [
+           'Обсуждение ваших потребностей',
+           'Анализ текущего ассортимента',
+           'Разработка рекомендаций',
+           'Обучение вашего персонала',
+           'Постоянная поддержка и консультации'
+         ]
+       }
+     ];
+
+    services.forEach((service, index) => {
+      const modalOverlay = document.createElement('div');
+      modalOverlay.className = 'modal-overlay';
+      modalOverlay.id = `serviceModal${index + 1}`;
+      modalOverlay.style.display = 'none';
+
+      const modalContent = document.createElement('div');
+      modalContent.className = 'modal-content';
+
+      const modalHeader = document.createElement('div');
+      modalHeader.className = 'modal-header';
+
+      const modalTitle = document.createElement('h4');
+      modalTitle.textContent = service.title;
+
+      const closeButton = document.createElement('button');
+      closeButton.className = 'close-button';
+      closeButton.innerHTML = '&times;';
+      closeButton.onclick = function() {
+        modalOverlay.style.display = 'none';
+      };
+
+      const modalBody = document.createElement('div');
+      modalBody.className = 'modal-body';
+
+      const description = document.createElement('p');
+       description.textContent = service.description;
+ 
+       const detailsHeader = document.createElement('h5');
+       detailsHeader.textContent = service.details;
+ 
+       const benefitsList = document.createElement('ul');
+       benefitsList.className = 'service-details-list';
+       service.benefits.forEach(benefit => {
+         const li = document.createElement('li');
+         li.textContent = benefit;
+         benefitsList.appendChild(li);
+       });
+ 
+       const processHeader = document.createElement('h5');
+       processHeader.textContent = 'Процесс работы:';
+ 
+       const processList = document.createElement('ol');
+       processList.className = 'service-process-list';
+       service.process.forEach(step => {
+         const li = document.createElement('li');
+         li.textContent = step;
+         processList.appendChild(li);
+       });
+ 
+       const contactButton = document.createElement('a');
+       contactButton.href = '#contact';
+       contactButton.className = 'btn btn-primary';
+       contactButton.textContent = 'Связаться с нами';
+ 
+       modalHeader.appendChild(modalTitle);
+       modalHeader.appendChild(closeButton);
+ 
+       modalBody.appendChild(description);
+       modalBody.appendChild(detailsHeader);
+       modalBody.appendChild(benefitsList);
+       modalBody.appendChild(processHeader);
+       modalBody.appendChild(processList);
+       modalBody.appendChild(contactButton);
+
+      modalContent.appendChild(modalHeader);
+      modalContent.appendChild(modalBody);
+
+      modalOverlay.appendChild(modalContent);
+
+      document.body.appendChild(modalOverlay);
+    });
+
+    // Добавляем обработчики событий для кнопок "Подробнее"
+    const readMoreButtons = document.querySelectorAll('[data-service]');
+    readMoreButtons.forEach((button, index) => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modal = document.getElementById(`serviceModal${index + 1}`);
+        if (modal) {
+          modal.style.display = 'flex';
+        }
+      });
+    });
+  }
+
+  // Инициализация модальных окон для услуг
+  createServiceModals();
     
     // Добавляем кнопку обратного звонка в хедер
-    const headerButtons = document.querySelector('.btn-getstarted').parentNode;
+    const headerButtons = document.querySelector('.menu').parentNode;
     const callbackButton = document.createElement('a');
     callbackButton.href = '#';
     callbackButton.className = 'btn-callback ms-3';
+    callbackButton.style.backgroundColor = '#4154f1';
     callbackButton.textContent = 'Обратный звонок';
     callbackButton.onclick = function(e) {
       e.preventDefault();
