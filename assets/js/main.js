@@ -698,18 +698,74 @@
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
+    const currentLocation = window.location.href.split('#')[0]; // Get current URL without hash
+    let isStaticPageActive = false;
+
+    // Deactivate all links first
+    navmenulinks.forEach(link => link.classList.remove('active'));
+
+    // Check for an exact match for static pages
     navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+      const linkHref = navmenulink.href.split('#')[0];
+      if (linkHref === currentLocation && !navmenulink.hash) {
         navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
+        isStaticPageActive = true;
       }
-    })
+    });
+
+    // If a static page link is active, and it's not the main page (index.html or '/'), stop here.
+    const isIndexPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+    if (isStaticPageActive && !isIndexPage) {
+      return;
+    }
+
+    // If on the index page or no static link was uniquely matched, proceed with scrollspy for hash links
+    // Or if a static link IS active but it IS the index page, also proceed with scrollspy
+    if (isIndexPage || !isStaticPageActive) {
+      let anyHashLinkActive = false;
+      navmenulinks.forEach(navmenulink => {
+        if (!navmenulink.hash) return; // Process only hash links
+
+        let section = document.querySelector(navmenulink.hash);
+        if (!section) return;
+
+        let position = window.scrollY + 200;
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          // If this hash link corresponds to the current page (e.g. index.html#about)
+          if (navmenulink.href.split('#')[0] === currentLocation || navmenulink.pathname === window.location.pathname) {
+            if (!isStaticPageActive) { // If no static page is active, this hash link can be active
+                navmenulink.classList.add('active');
+                anyHashLinkActive = true;
+            } else if (isIndexPage && navmenulink.pathname === window.location.pathname) {
+                // If on index page and a static link for index is active, still allow hash links to be active
+                // Potentially remove active from the static index link if a hash is now active
+                const staticIndexLink = Array.from(navmenulinks).find(l => (l.pathname === '/' || l.pathname.endsWith('/index.html')) && !l.hash && l.classList.contains('active'));
+                if(staticIndexLink) staticIndexLink.classList.remove('active');
+                navmenulink.classList.add('active');
+                anyHashLinkActive = true;
+            }
+          }
+        } else {
+          // Only remove active if it's a hash link and not conflicting with a determined static active page
+          if (!isStaticPageActive || (isIndexPage && navmenulink.pathname === window.location.pathname)) {
+            // navmenulink.classList.remove('active'); // Already removed at the beginning
+          }
+        }
+      });
+      
+      // If on index page, no hash link is active, but the static index link exists, make it active.
+      if (isIndexPage && !anyHashLinkActive) {
+        navmenulinks.forEach(navmenulink => {
+          const linkHrefBase = navmenulink.href.split('#')[0];
+          const isLinkForIndex = navmenulink.pathname === '/' || navmenulink.pathname.endsWith('/index.html');
+          if (isLinkForIndex && !navmenulink.hash) {
+            // Clear others just in case, then add active
+            document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+            navmenulink.classList.add('active');
+          }
+        });
+      }
+    }
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
@@ -877,5 +933,36 @@
       copyrightYear.textContent = new Date().getFullYear();
     }
   });
+
+  // Modern Testimonials Swiper
+  if (document.querySelector('.modern-testimonials')) {
+    new Swiper('.modern-testimonials', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true,
+      grabCursor: true,
+      pagination: {
+        el: '.modern-testimonials .swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
+      },
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+    });
+  }
 
 })();

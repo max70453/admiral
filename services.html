@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Услуги - Адмирал</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center menu">
+    
+          <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <img src="assets/img/logo.png" alt="Логотип Адмирал">
+            <h1 class="sitename">Адмирал</h1>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="#hero">Главная</a></li>
+              <li><a href="about.html" class="active">О компании</a></li>
+              <li><a href="products.html">Продукция</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="#faq">F.A.Q</a></li>
+              <li><a href="testimonial.html">Отзывы</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+          <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about"></a> -->
+    
+        </div>
+      </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section page-hero d-flex align-items-center" style="min-height: 60vh; padding: 120px 0 40px;">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 data-aos="fade-up" class="mb-3">Наши услуги для вашего бизнеса</h1>
+            <p data-aos="fade-up" data-aos-delay="100" class="lead mb-4">Комплексные решения для хранения, доставки и сопровождения продукции. Доверьтесь профессионалам!</p>
+            <a href="contact.html" class="btn btn-primary btn-lg px-4" data-aos="fade-up" data-aos-delay="200">Получить консультацию</a>
+          </div>
+          <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/img/services-hero.png" alt="Услуги компании" class="img-fluid" style="max-height: 320px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section py-5">
+      <div class="container">
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+          <h2>Что мы предлагаем</h2>
+          <p class="lead">Познакомьтесь с нашими основными услугами</p>
+        </div>
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="service-item item-cyan shadow h-100 p-4 rounded-4">
+              <div class="icon mb-3"><i class="bi bi-truck"></i></div>
+              <h3>Доставка</h3>
+              <p>Быстрая и надежная доставка продукции по всему региону. Гарантируем сохранность товара и соблюдение температурного режима.</p>
+              <a href="#contact" class="read-more" data-bs-toggle="modal" data-bs-target="#modal-delivery">Подробнее <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-orange shadow h-100 p-4 rounded-4">
+              <div class="icon mb-3"><i class="bi bi-box-seam"></i></div>
+              <h3>Хранение</h3>
+              <p>Современные складские помещения с контролем температуры для хранения продуктов питания в оптимальных условиях.</p>
+              <a href="#contact" class="read-more" data-bs-toggle="modal" data-bs-target="#modal-storage">Подробнее <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-teal shadow h-100 p-4 rounded-4">
+              <div class="icon mb-3"><i class="bi bi-people"></i></div>
+              <h3>Консультации</h3>
+              <p>Профессиональные консультации по выбору продукции и условиям сотрудничества от наших специалистов.</p>
+              <a href="#contact" class="read-more" data-bs-toggle="modal" data-bs-target="#modal-consult">Подробнее <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us section-bg py-5">
+      <div class="container">
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+          <h2>Почему выбирают нас</h2>
+          <p class="lead">Наши преимущества — ваш успех</p>
+        </div>
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up">
+            <div class="why-box text-center p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="display-4 fw-bold text-primary mb-2">10+</div>
+              <h4>Лет опыта</h4>
+              <p>Успешная работа на рынке продуктов питания</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-box text-center p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="display-4 fw-bold text-success mb-2"><i class="bi bi-emoji-smile"></i></div>
+              <h4>1000+ клиентов</h4>
+              <p>Довольные клиенты по всей России</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-box text-center p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="display-4 fw-bold text-warning mb-2"><i class="bi bi-award"></i></div>
+              <h4>Гарантия качества</h4>
+              <p>Строгий контроль на всех этапах</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-box text-center p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="display-4 fw-bold text-danger mb-2"><i class="bi bi-lightning-charge"></i></div>
+              <h4>Оперативность</h4>
+              <p>Быстрая обработка заказов и доставка</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq py-5">
+      <div class="container">
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+          <h2>Часто задаваемые вопросы</h2>
+          <p class="lead">Ответы на популярные вопросы о наших услугах</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="accordion accordion-flush" id="faqlist">
+              <div class="accordion-item" data-aos="fade-up">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                    <i class="bi bi-cart-check me-2 text-primary"></i> Как оформить заказ?
+                  </button>
+                </h3>
+                <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Вы можете оформить заказ через наш сайт, по телефону или отправив заявку на электронную почту. Наши менеджеры свяжутся с вами для уточнения деталей заказа.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                    <i class="bi bi-truck me-2 text-success"></i> Какие условия доставки?
+                  </button>
+                </h3>
+                <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Мы осуществляем доставку по всему региону. Сроки и стоимость доставки зависят от объема заказа и удаленности пункта назначения. Для крупных заказов доставка может быть бесплатной.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                    <i class="bi bi-cash-coin me-2 text-warning"></i> Есть ли минимальная сумма заказа?
+                  </button>
+                </h3>
+                <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Да, минимальная сумма заказа зависит от типа продукции и условий доставки. Точную информацию вы можете узнать у наших менеджеров.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Подпишитесь на нашу рассылку</h4>
+            <p>Получайте новости о наших продуктах, акциях и специальных предложениях!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email" placeholder="Ваш Email"><input type="submit" value="Подписаться"></div>
+              <div class="loading">Загрузка</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Ваша заявка на подписку отправлена. Спасибо!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <img src="assets/img/logo.png" alt="Логотип Адмирал">
+              <span>Адмирал</span>
+            </a>
+            <p>Компания «Адмирал» — производитель высококачественных продуктов питания с многолетним опытом работы на рынке. Мы заботимся о здоровье наших потребителей и предлагаем только натуральные и безопасные продукты.</p>
+            <div class="social-links mt-3 d-flex">
+              <a href="#" class="facebook"><img width="48" height="48" src="https://img.icons8.com/color/48/odnoklassniki.png" alt="odnoklassniki"/></a>
+              <a href="#" class="instagram"><img width="48" height="48" src="https://img.icons8.com/color/48/vk-com.png" alt="vk-com"/></a>
+              <a href="#" class="vk"><img width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-cloud-based-instant-messaging-telegram-mobile-app-logotype-logo-color-tal-revivo.png" alt="external-cloud-based-instant-messaging-telegram-mobile-app-logotype-logo-color-tal-revivo"/></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Полезные ссылки</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Главная</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">О компании</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Продукция</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services">Услуги</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#faq">Часто задаваемые вопросы</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Наша продукция</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Мороженое</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Мясная продукция</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Фрукты и овощи</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Хлебобулочные изделия</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#products">Кондитерские изделия</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Контакты</h4>
+            <p>
+              ул. Ленина, 123<br>
+              г. Донецк, 83000<br>
+              ДНР<br><br>
+              <strong>Телефон:</strong> +7 (949) 123-45-67<br>
+              <strong>Email:</strong> info@admiral-food.com<br>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="copyright">
+        &copy; <span id="copyright-year">2025</span> <strong><span>Адмирал</span></strong>. Все права защищены
+      </div>
+      <div class="credits">
+        Разработано <a href="#">Admiral Team</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Модальные окна для подробной информации об услугах -->
+  <!-- Modal: Доставка -->
+  <div class="modal fade" id="modal-delivery" tabindex="-1" aria-labelledby="modalDeliveryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDeliveryLabel">Доставка</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Быстрая и надёжная доставка</b> по всему региону с соблюдением всех стандартов безопасности и температурного режима. Мы используем современный автопарк и отслеживаем каждый заказ в реальном времени.</p>
+          <ul>
+            <li>Доставка день в день по городу</li>
+            <li>Охлаждённый и замороженный транспорт</li>
+            <li>Возможность экспресс-доставки</li>
+            <li>Гибкие тарифы и бесплатная доставка для крупных заказов</li>
+          </ul>
+          <img src="assets/img/modal-delivery.jpg" alt="Доставка" class="img-fluid rounded mt-3">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal: Хранение -->
+  <div class="modal fade" id="modal-storage" tabindex="-1" aria-labelledby="modalStorageLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalStorageLabel">Хранение</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Современные складские комплексы</b> с многоуровневым контролем температуры и влажности. Ваши продукты всегда в идеальных условиях!</p>
+          <ul>
+            <li>Склады класса А с автоматизацией</li>
+            <li>Постоянный мониторинг состояния продукции</li>
+            <li>Видеонаблюдение и охрана 24/7</li>
+            <li>Возможность долгосрочного и краткосрочного хранения</li>
+          </ul>
+          <img src="assets/img/modal-storage.jpg" alt="Хранение" class="img-fluid rounded mt-3">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal: Консультации -->
+  <div class="modal fade" id="modal-consult" tabindex="-1" aria-labelledby="modalConsultLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConsultLabel">Консультации</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Профессиональные консультации</b> по выбору продукции, логистике, условиям хранения и доставки. Наши эксперты помогут подобрать оптимальное решение для вашего бизнеса.</p>
+          <ul>
+            <li>Индивидуальный подход к каждому клиенту</li>
+            <li>Бесплатная первичная консультация</li>
+            <li>Помощь в оформлении документов</li>
+            <li>Поддержка на всех этапах сотрудничества</li>
+          </ul>
+          <img src="assets/img/modal-consult.jpg" alt="Консультации" class="img-fluid rounded mt-3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Конец модальных окон -->
+
+</body>
+
+</html>
